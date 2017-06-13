@@ -9,13 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var campaign_service_1 = require('./campaign.service');
+var campaign_list_component_1 = require('./campaign-list.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: "<h1>Management Service</h1>\n            <campaign-list></campaign-list>",
+            directives: [campaign_list_component_1.CampaignListComponent],
+            providers: [campaign_service_1.CampaignService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
