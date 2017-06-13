@@ -3,11 +3,18 @@ import { CampaignService} from './campaign.service';
 
 @Component({
   selector: 'campaign-list',
-    //template: `<h2>Test</h2>`
   template: `<h2>Campaign Overview</h2>
-                <ul *ngFor="let campaign of campaigns">
-                    <li>{{campaign.name}} {{campaign.description}} {{campaign.creationTime}}</li>
-                </ul>`
+                <table border="2px">
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Creation Time</th>
+                    <tr *ngFor="let campaign of campaigns">
+                        <td>{{campaign.name}}</td>
+                        <td>{{campaign.description}}</td>
+                        <!--<td>{{campaign.creationTime | date:'dd/MM/yyyy HH:mm:ss'}}</td>-->
+                        <td>{{campaign.creationTime}}</td>
+                    </tr>
+                </table>`
 })
 
 export class CampaignListComponent implements OnInit{
