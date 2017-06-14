@@ -5,9 +5,13 @@ import { CampaignService} from './campaign.service';
   selector: 'campaign-list',
   template: `<h2>Campaign Overview</h2>
                 <table border="2px">
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Creation Time</th>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Creation Time</th>
+                    </tr>
+                    </thead>
                     <tr *ngFor="let campaign of rows">
                         <td>{{campaign.name}}</td>
                         <td>{{campaign.description}}</td>
@@ -35,7 +39,9 @@ import { CampaignService} from './campaign.service';
 
 export class CampaignListComponent implements OnInit{
     abstract;
-    rows = [];
+    rows: any[];
+    //rows: ICampaign[];
+    errorMessage: string;
 
     constructor(private _campaignService : CampaignService) {}
 
@@ -46,6 +52,7 @@ export class CampaignListComponent implements OnInit{
 
     ngOnInit(){
             this._campaignService.getCampaigns()
-                    .subscribe(responseCampaignData => this.rows = responseCampaignData);
+                    .subscribe(responseCampaigns => this.rows = responseCampaigns,
+                                error => this.errorMessage = <any> error);
     }
 }

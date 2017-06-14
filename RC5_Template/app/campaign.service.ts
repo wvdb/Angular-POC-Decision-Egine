@@ -14,8 +14,8 @@ export class CampaignService {
     getCampaigns() {
         return this._http.get(this._url)
             .map((response:Response) => response.json())
-            .do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)) )
-            .catch(this.handleError);
+            .do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)) );
+            //.catch(this.handleError);
     }
 
     getCampaigns2() {
@@ -180,8 +180,8 @@ export class CampaignService {
         //    .map((response:Response) => response.json());
     }
 
-    private handleError(error: Response) {
-        console.log('Management Service+++ error = ' + error)
-    }
+    //private handleError(error: Response) {
+    //    console.log('Management Service+++ error = ')
+    //}
 
 }
