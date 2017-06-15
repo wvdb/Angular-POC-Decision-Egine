@@ -6,18 +6,18 @@ import { CampaignService} from './campaign.service';
   template: `<h2>Campaign Overview</h2>
                 <table border="2px">
                     <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Owner</th>
-                        <th>Creation Time</th>
-                        <th>Enabled</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Asset</th>
-                        <th>Selector</th>
-                    </tr>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Owner</th>
+                            <th>Creation Time</th>
+                            <th>Enabled</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Asset</th>
+                            <th>Selector</th>
+                        </tr>
                     </thead>
                     <tr *ngFor="let campaign of rows">
                         <td align="center">{{campaign.id}}</td>
@@ -43,12 +43,17 @@ import { CampaignService} from './campaign.service';
                             <table border="0px" >
                                 <tr *ngFor="let selector of campaign.selectors">
                                     <!--<td>{{selector.id}}</td>-->
-                                    <td>{{selector.name}}</td>
+                                    <!--<td>{{selector.name}}</td>-->
                                     <!--<td>{{selector.description}}</td>-->
                                     <!--<td>{{selector.priority}}</td>-->
                                     <!--<td>{{selector.maxViews}}</td>-->
                                     <!--<td>{{selector.coolDownPeriod}}</td>-->
-                                    <td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>
+                                    <!--<td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>-->
+                                    <nav>
+                                        <a routerLink="/selector" routerLinkActive="active"><td>{{selector.name}}</td></a>
+                                    </nav>
+                                    <router-outlet>
+                                    </router-outlet>
                                     <!--<td>{{selector.startTime}}</td>-->
                                     <!--<td>{{selector.endTime}}</td>-->
                                     <!--<td>{{selector.rule}}</td>-->

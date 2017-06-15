@@ -12,6 +12,9 @@ body {
 table {
     border-collapse: collapse;
 }
+nav a.active {
+    color: #0000ee;
+}
 
 /*
  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
