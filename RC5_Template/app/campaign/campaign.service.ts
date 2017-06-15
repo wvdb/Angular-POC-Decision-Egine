@@ -15,7 +15,7 @@ export class CampaignService {
     getCampaigns() {
         return this._http.get(this._url)
             .map((response:Response) => response.json())
-            .do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
+            //.do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
             .catch(CampaignService._handleError);
     }
 

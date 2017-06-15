@@ -89,6 +89,7 @@ export class CampaignListComponent implements OnInit{
     constructor(private _campaignService : CampaignService) {}
 
     ngOnInit(){
+            console.log('starting retrieveCampaigns');
             this._campaignService.getCampaigns()
                     .subscribe(responseCampaigns => this.rows = responseCampaigns,
                                responseError => this.errorMessage = 'Retrieving Campaigns failed. ' || responseError);
