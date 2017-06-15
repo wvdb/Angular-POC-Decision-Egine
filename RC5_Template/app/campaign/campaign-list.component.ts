@@ -31,10 +31,10 @@ import { CampaignService} from './campaign.service';
                         <td>
                             <table border="1px">
                                 <tr *ngFor="let asset of campaign.assets">
-                                    <td>{{asset.id}}</td>
+                                    <!--<td>{{asset.id}}</td>-->
                                     <td>{{asset.name}}</td>
-                                    <td>{{asset.filename}}</td>
-                                    <td>{{asset.duration}}</td>
+                                    <!--<td>{{asset.filename}}</td>-->
+                                    <!--<td>{{asset.duration}}</td>-->
                                     <td>{{asset.index}}</td>
                                 </tr>
                             </table>
@@ -42,12 +42,12 @@ import { CampaignService} from './campaign.service';
                         <td>
                             <table border="1px" >
                                 <tr *ngFor="let selector of campaign.selectors">
-                                    <td>{{selector.id}}</td>
+                                    <!--<td>{{selector.id}}</td>-->
                                     <td>{{selector.name}}</td>
                                     <!--<td>{{selector.description}}</td>-->
-                                    <td>{{selector.priority}}</td>
-                                    <td>{{selector.maxViews}}</td>
-                                    <td>{{selector.coolDownPeriod}}</td>
+                                    <!--<td>{{selector.priority}}</td>-->
+                                    <!--<td>{{selector.maxViews}}</td>-->
+                                    <!--<td>{{selector.coolDownPeriod}}</td>-->
                                     <td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>
                                     <!--<td>{{selector.startTime}}</td>-->
                                     <!--<td>{{selector.endTime}}</td>-->
