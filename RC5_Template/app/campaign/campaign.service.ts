@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class CampaignService {
@@ -14,12 +15,14 @@ export class CampaignService {
     getCampaigns() {
         return this._http.get(this._url)
             .map((response:Response) => response.json())
-            .do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)) );
-            //.catch(this.handleError);
+            .do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
+            .catch(CampaignService._handleError);
     }
 
-    //private handleError(error: Response) {
-    //    console.log('Management Service+++ error = ')
-    //}
+    static _handleError(error: Response) {
+        //console.error('Retrieving Campaign Failed: error = ' || error);
+        console.error(error);
+        return Observable.throw(error)
+    }
 
 }

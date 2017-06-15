@@ -29,7 +29,7 @@ import { CampaignService} from './campaign.service';
                         <td>{{campaign.startTime}}</td>
                         <td>{{campaign.endTime}}</td>
                         <td>
-                            <table border="1px">
+                            <table border="0px">
                                 <tr *ngFor="let asset of campaign.assets">
                                     <!--<td>{{asset.id}}</td>-->
                                     <td>{{asset.name}}</td>
@@ -40,7 +40,7 @@ import { CampaignService} from './campaign.service';
                             </table>
                         </td>
                         <td>
-                            <table border="1px" >
+                            <table border="0px" >
                                 <tr *ngFor="let selector of campaign.selectors">
                                     <!--<td>{{selector.id}}</td>-->
                                     <td>{{selector.name}}</td>
@@ -56,7 +56,8 @@ import { CampaignService} from './campaign.service';
                             </table>
                         </td>
                     </tr>
-                </table>`
+                </table>
+                <h5>{{errorMessage}}</h5>`
   //  template: `<h2>Campaign Overview</h2>
   //                   <ngx-datatable
   //                      class="material"
@@ -78,19 +79,13 @@ import { CampaignService} from './campaign.service';
 export class CampaignListComponent implements OnInit{
     abstract;
     rows: any[];
-    //rows: ICampaign[];
     errorMessage: string;
 
     constructor(private _campaignService : CampaignService) {}
 
-    //ngOnInit(){
-    //    this.rows = this._campaignService.getCampaigns();
-    //    console.log(this.rows);
-    //}
-
     ngOnInit(){
             this._campaignService.getCampaigns()
                     .subscribe(responseCampaigns => this.rows = responseCampaigns,
-                                error => this.errorMessage = <any> error);
+                               responseError => this.errorMessage = 'Retrieving Campaigns failed. ' || responseError);
     }
 }
