@@ -15,8 +15,8 @@ import { CampaignService} from './campaign.service';
                             <th>Enabled</th>
                             <th>Start Date</th>
                             <th>End Date</th>
-                            <th>Asset</th>
                             <th>Selector</th>
+                            <th>Asset</th>
                         </tr>
                     </thead>
                     <tr *ngFor="let campaign of rows">
@@ -28,17 +28,6 @@ import { CampaignService} from './campaign.service';
                         <td align="center">{{campaign.enabled == true ? 'Yes' : 'No'}}</td>
                         <td>{{campaign.startTime}}</td>
                         <td>{{campaign.endTime}}</td>
-                        <td>
-                            <table border="0px">
-                                <tr *ngFor="let asset of campaign.assets">
-                                    <!--<td>{{asset.id}}</td>-->
-                                    <td>{{asset.name}}</td>
-                                    <!--<td>{{asset.filename}}</td>-->
-                                    <!--<td>{{asset.duration}}</td>-->
-                                    <td>{{asset.index}}</td>
-                                </tr>
-                            </table>
-                        </td>
                         <td>
                             <table border="0px" >
                                 <tr *ngFor="let selector of campaign.selectors">
@@ -58,6 +47,19 @@ import { CampaignService} from './campaign.service';
                                     <!--<td>{{selector.startTime}}</td>-->
                                     <!--<td>{{selector.endTime}}</td>-->
                                     <!--<td>{{selector.rule}}</td>-->
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table border="0px">
+                                <tr *ngFor="let asset of campaign.assets">
+                                    <nav>
+                                        <a [routerLink]="['/asset', asset.id ]" routerLinkActive="active"><td>{{asset.name}}</td></a>
+                                    </nav>
+                                    <router-outlet>
+                                    </router-outlet>
+                                    <!--<td>{{asset.filename}}</td>-->
+                                    <!--<td>{{asset.duration}}</td>-->
                                 </tr>
                             </table>
                         </td>

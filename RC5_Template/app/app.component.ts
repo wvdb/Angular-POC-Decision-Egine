@@ -3,6 +3,8 @@ import { CampaignService} from './campaign/campaign.service';
 import { CampaignListComponent} from './campaign/campaign-list.component';
 import { SelectorService} from './selector/selector.service';
 import { SelectorComponent} from './selector/selector.component';
+import { AssetService} from './asset/asset.service';
+import { AssetComponent} from './asset/asset.component';
 
 @Component({
     selector: 'my-app',
@@ -23,8 +25,8 @@ import { SelectorComponent} from './selector/selector.component';
         </div>
     </div>
     `,
-    directives: [CampaignListComponent, SelectorComponent],
-    providers: [CampaignService, SelectorService]
+    directives: [CampaignListComponent, SelectorComponent, AssetComponent],
+    providers: [CampaignService, SelectorService, AssetService]
 })
 
 export class AppComponent { }

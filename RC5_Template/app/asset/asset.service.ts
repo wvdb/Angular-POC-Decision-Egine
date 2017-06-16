@@ -7,20 +7,20 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 @Injectable()
-export class CampaignService {
-    private _url = "http://localhost:8080/campaigns";
+export class AssetService {
+    private _url = "http://localhost:8080/assets/";
 
     constructor(private _http: Http) {}
 
-    getCampaigns() {
-        return this._http.get(this._url)
+    getAsset(assetId:string) {
+        console.log( '>>>Starting retrieve asset with id '.concat(assetId));
+        return this._http.get(this._url.concat(assetId))
             .map((response:Response) => response.json())
-            //.do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
-            .catch(CampaignService._handleError);
+            .catch(AssetService._handleError);
     }
 
     static _handleError(error: Response) {
-        console.error('Retrieving Campaign Failed: error = '.concat(error.toString()));
+        console.error(error);
         return Observable.throw(error)
     }
 

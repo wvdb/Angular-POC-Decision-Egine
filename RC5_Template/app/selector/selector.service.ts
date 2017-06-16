@@ -14,7 +14,6 @@ export class SelectorService {
 
     getSelector(selectorId:string) {
         console.log( '>>>Starting retrieve selector with id '.concat(selectorId));
-        //return this._http.get(this._url || id)
         return this._http.get(this._url.concat(selectorId))
             .map((response:Response) => response.json())
             .do(data => console.log('Selector retrieved: '+ JSON.stringify(data)))

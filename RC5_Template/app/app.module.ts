@@ -19,6 +19,7 @@ import { AppComponent }             from './app.component';
 import { WelcomeComponent }         from './welcome.component';
 import { CampaignListComponent }    from './campaign/campaign-list.component';
 import { SelectorComponent }        from './selector/selector.component';
+import { AssetComponent }        from './asset/asset.component';
 
 @NgModule({
   imports:      [
@@ -27,11 +28,12 @@ import { SelectorComponent }        from './selector/selector.component';
       RouterModule.forRoot([
                 {path: 'welcome', component: WelcomeComponent},
                 {path: 'campaigns', component: CampaignListComponent},
-                {path: 'selector/:id', component: SelectorComponent}
+                {path: 'selector/:id', component: SelectorComponent},
+                {path: 'asset/:id', component: AssetComponent}
           ]
       )
   ],
-  declarations: [ AppComponent, WelcomeComponent, SelectorComponent, CampaignListComponent ],
+  declarations: [ AppComponent, WelcomeComponent, SelectorComponent, CampaignListComponent, AssetComponent],
   bootstrap:    [ AppComponent ]
 })
 
