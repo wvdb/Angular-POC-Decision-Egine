@@ -3,7 +3,7 @@ import { CampaignService} from './campaign.service';
 
 @Component({
   selector: 'campaign-list',
-  template: `<h2>Campaign Overview</h2>
+  template: `<!--<h2>Campaign Overview</h2>-->
                 <table border="2px">
                     <thead>
                         <tr>
@@ -50,11 +50,11 @@ import { CampaignService} from './campaign.service';
                                     <!--<td>{{selector.coolDownPeriod}}</td>-->
                                     <!--<td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>-->
                                     <nav>
-                                        <a [routerLink]="['/selector', selector.id ]" routerLinkActive="active"><td>{{selector.id}}</td></a>
+                                        <a [routerLink]="['/selector', selector.id ]" routerLinkActive="active"><td>{{selector.name}}</td></a>
                                     </nav>
                                     <router-outlet>
                                     </router-outlet>
-                                    <td>{{selector.name}}</td>
+                                    <!--<td>{{selector.name}}</td>-->
                                     <!--<td>{{selector.startTime}}</td>-->
                                     <!--<td>{{selector.endTime}}</td>-->
                                     <!--<td>{{selector.rule}}</td>-->

@@ -10,11 +10,11 @@ import { SelectorComponent} from './selector/selector.component';
     <div>
         <nav class='navbar navbar-default'>
             <div class="container-fluid">
-              <a class='navbar-brand'>Overview</a>
-              <ul class='nav navbar-nav'>
+              <!--<a class='navbar-brand'>Overview</a>-->
+              <ul class='horizontal'>
                   <li><a [routerLink]="['/welcome']">Home</a></li>
                   <li><a [routerLink]="['/campaigns']">Campaign Overview</a></li>
-                  <li><a [routerLink]="['/selector']">Selector</a></li>
+                  <!--<li><a [routerLink]="['/selector']">Selector</a></li>-->
               </ul>
             </div>
         </nav>

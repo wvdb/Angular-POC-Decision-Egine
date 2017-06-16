@@ -8,14 +8,14 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class SelectorService {
-    private _url = "http://localhost:8080/selectors/3";
+    private _url = "http://localhost:8080/selectors/";
 
     constructor(private _http: Http) {}
 
-    getSelector(id) {
-        //console.log('>>>Starting retrieve selector with id ' || id);
+    getSelector(selectorId:string) {
+        console.log( '>>>Starting retrieve selector with id '.concat(selectorId));
         //return this._http.get(this._url || id)
-        return this._http.get(this._url)
+        return this._http.get(this._url.concat(selectorId))
             .map((response:Response) => response.json())
             .do(data => console.log('Selector retrieved: '+ JSON.stringify(data)))
             .catch(SelectorService._handleError);

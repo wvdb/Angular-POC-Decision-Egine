@@ -4,7 +4,7 @@ import { SelectorService } from './selector.service';
 
 @Component({
     selector: 'selector',
-    template: `<h2>Selector</h2>
+    template: `<!--<h2>Selector</h2>-->
                 <table border="2px">
                         <tr>
                             <td>Id</td>
@@ -44,7 +44,7 @@ import { SelectorService } from './selector.service';
                         </tr>
                         <tr>
                             <td>Rule</td>
-                            <td>{{selector.rule}}</td>
+                            <td height="200px" width="600px"> <pre>{{selector.rule}}</pre></td>
                         </tr>
                </table>
     `
