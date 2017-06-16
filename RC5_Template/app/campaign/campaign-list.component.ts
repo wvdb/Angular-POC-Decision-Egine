@@ -50,10 +50,11 @@ import { CampaignService} from './campaign.service';
                                     <!--<td>{{selector.coolDownPeriod}}</td>-->
                                     <!--<td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>-->
                                     <nav>
-                                        <a routerLink="/selector" routerLinkActive="active"><td>{{selector.name}}</td></a>
+                                        <a [routerLink]="['/selector', selector.id ]" routerLinkActive="active"><td>{{selector.id}}</td></a>
                                     </nav>
                                     <router-outlet>
                                     </router-outlet>
+                                    <td>{{selector.name}}</td>
                                     <!--<td>{{selector.startTime}}</td>-->
                                     <!--<td>{{selector.endTime}}</td>-->
                                     <!--<td>{{selector.rule}}</td>-->
@@ -89,7 +90,6 @@ export class CampaignListComponent implements OnInit{
     constructor(private _campaignService : CampaignService) {}
 
     ngOnInit(){
-            console.log('starting retrieveCampaigns');
             this._campaignService.getCampaigns()
                     .subscribe(responseCampaigns => this.rows = responseCampaigns,
                                responseError => this.errorMessage = 'Retrieving Campaigns failed. ' || responseError);

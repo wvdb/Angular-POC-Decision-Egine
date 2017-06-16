@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CampaignService} from './campaign/campaign.service';
 import { CampaignListComponent} from './campaign/campaign-list.component';
+import { SelectorService} from './selector/selector.service';
+import { SelectorComponent} from './selector/selector.component';
 
 @Component({
     selector: 'my-app',
@@ -21,8 +23,8 @@ import { CampaignListComponent} from './campaign/campaign-list.component';
         </div>
     </div>
     `,
-    directives: [CampaignListComponent],
-    providers: [CampaignService]
+    directives: [CampaignListComponent, SelectorComponent],
+    providers: [CampaignService, SelectorService]
 })
 
 export class AppComponent { }

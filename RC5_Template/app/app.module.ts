@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 // https://www.beyondjava.net/blog/how-to-use-a-javascript-datatable-in-an-angular-application/
 //import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+// logging : https://www.npmjs.com/package/angular2-log
+
 import { AppComponent }             from './app.component';
 import { WelcomeComponent }         from './welcome.component';
 import { CampaignListComponent }    from './campaign/campaign-list.component';
@@ -25,7 +27,7 @@ import { SelectorComponent }        from './selector/selector.component';
       RouterModule.forRoot([
                 {path: 'welcome', component: WelcomeComponent},
                 {path: 'campaigns', component: CampaignListComponent},
-                {path: 'selector', component: SelectorComponent}
+                {path: 'selector/:id', component: SelectorComponent}
           ]
       )
   ],

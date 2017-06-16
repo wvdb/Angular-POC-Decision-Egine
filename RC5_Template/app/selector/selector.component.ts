@@ -1,9 +1,11 @@
-import { Component, OnInit} from '@angular/core';
-import { CampaignService} from '../campaign/campaign.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SelectorService } from './selector.service';
 
 @Component({
+    selector: 'selector',
     template: `<h2>Selector</h2>
-                <table border="2px" *ngFor="let selector of selectors">
+                <table border="2px">
                         <tr>
                             <td>Id</td>
                             <td>{{selector.id}}</td>
@@ -51,16 +53,20 @@ import { CampaignService} from '../campaign/campaign.service';
 export class SelectorComponent implements OnInit{
     abstract;
     errorMessage: string;
-    selectors: any[];
+    selector: any = {};
 
-    constructor(private _campaignService : CampaignService) {
+    constructor(
+        private selectorService: SelectorService,
+        private route: ActivatedRoute) {
+
     }
 
     ngOnInit(){
-        console.log('starting retrieveCampaigns (2)');
-        this._campaignService.getCampaigns()
-            .subscribe(responseCampaigns => this.selectors = responseCampaigns[0].selectors,
-                       responseError => this.errorMessage = 'Retrieving Campaigns failed. ' || responseError)
+        this.selectorService.getSelector(this.route.snapshot.params['id'])
+            .subscribe(responseSelector => {
+                this.selector = responseSelector,
+                responseError => this.errorMessage = 'Retrieving Selector failed. ' || responseError;
+            })
     }
 
 }
