@@ -11,12 +11,10 @@ import { APP_CONFIG, IAppConfig } from '../app.config';
 
 @Injectable()
 export class CampaignService {
-    private _url = "http://localhost:8080/campaigns";
-
     constructor(private _http: Http, @Inject(APP_CONFIG) private _config: IAppConfig) {}
 
     getCampaigns() {
-        return this._http.get(this._config.apiEndpoint)
+        return this._http.get(this._config.campaignEndpoint)
             .map((response:Response) => response.json())
             //.do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
             .catch(CampaignService._handleError);

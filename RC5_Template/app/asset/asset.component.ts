@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AssetService } from './asset.service';
 
+import { APP_CONFIG, IAppConfig } from '../app.config';
+
 @Component({
     selector: 'selector',
     moduleId: module.id,

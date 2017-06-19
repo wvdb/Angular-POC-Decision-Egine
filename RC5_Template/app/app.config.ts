@@ -3,9 +3,13 @@ import { OpaqueToken } from "@angular/core";
 export let APP_CONFIG = new OpaqueToken("app.config");
 
 export interface IAppConfig {
-    apiEndpoint: string;
+    campaignEndpoint: string;
+    selectorEndpoint: string;
+    assetEndpoint: string;
 }
 
 export const AppConfig: IAppConfig = {
-    apiEndpoint: "http://localhost:8080/campaigns"
+    campaignEndpoint: "http://localhost:8084/campaigns",
+    selectorEndpoint: "http://localhost:8084/selectors/",
+    assetEndpoint: "http://localhost:8084/assets/"
 };
