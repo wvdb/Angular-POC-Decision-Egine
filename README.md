@@ -7,8 +7,8 @@ Using the
 - Run 'npm start' on command line (this will start Node server on port 3000).
 
 ### TODO
-* -> date format
-* ->
+* -> date format (done)
+* -> dry run
 * -> testing
 
 ### Websites of interest (others)
@@ -20,7 +20,6 @@ Using the
 * https://github.com/swimlane/ngx-datatable/blob/master/demo/basic/scrolling.component.ts
 * http://valor-software.com/ng2-table/
 * https://www.beyondjava.net/blog/how-to-use-a-javascript-datatable-in-an-angular-application/
-* import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-
-* logging : https://www.npmjs.com/package/angular2-log
 * https://www.typescriptlang.org/docs/home.html
+* import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+* logging : https://www.npmjs.com/package/angular2-log

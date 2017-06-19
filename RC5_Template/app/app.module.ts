@@ -10,6 +10,8 @@ import { ImpressionListComponent} from './impression/impression-list.component';
 import { SelectorComponent }        from './selector/selector.component';
 import { AssetComponent }           from './asset/asset.component';
 
+import { APP_CONFIG, AppConfig } from './app.config';
+
 @NgModule({
   imports:      [
       BrowserModule,
@@ -24,7 +26,10 @@ import { AssetComponent }           from './asset/asset.component';
       )
   ],
   declarations: [ AppComponent, WelcomeComponent, SelectorComponent, CampaignListComponent, ImpressionListComponent, AssetComponent],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [
+        { provide: APP_CONFIG, useValue: AppConfig }
+  ]
 })
 
 export class AppModule {
