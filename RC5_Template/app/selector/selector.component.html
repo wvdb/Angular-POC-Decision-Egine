@@ -1,0 +1,43 @@
+<!--<h2>Selector</h2>-->
+<table border="2px">
+    <tr>
+        <td>Id</td>
+        <td>{{selector.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{selector.name}}</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>{{selector.description}}</td>
+    </tr>
+    <tr>
+        <td>Priority</td>
+        <td>{{selector.priority}}</td>
+    </tr>
+    <tr>
+        <td>Maximum Views</td>
+        <td>{{selector.maxViews}}</td>
+    </tr>
+    <tr>
+        <td>Cool Down Period</td>
+        <td title="Cool Down Period is expressed in seconds">{{selector.coolDownPeriod}}</td>
+    </tr>
+    <tr>
+        <td>Enabled</td>
+        <td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>
+    </tr>
+    <tr>
+        <td>Start Date</td>
+        <td>{{selector.startTime | date:"dd/MM/yyyy"}}</td>
+    </tr>
+    <tr>
+        <td>End Date</td>
+        <td>{{selector.endTime | date:"dd/MM/yyyy"}}</td>
+    </tr>
+    <tr>
+        <td>Rule</td>
+        <td height="200px" width="600px"> <pre>{{selector.rule}}</pre></td>
+    </tr>
+</table>

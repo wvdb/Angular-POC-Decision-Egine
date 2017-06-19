@@ -3,69 +3,8 @@ import { CampaignService} from './campaign.service';
 
 @Component({
   selector: 'campaign-list',
-  template: `<!--<h2>Campaign Overview</h2>-->
-                <table border="2px">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Owner</th>
-                            <th>Creation Time</th>
-                            <th>Enabled</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Selector</th>
-                            <th>Asset</th>
-                        </tr>
-                    </thead>
-                    <tr *ngFor="let campaign of rows">
-                        <td align="center">{{campaign.id}}</td>
-                        <td>{{campaign.name}}</td>
-                        <td>{{campaign.description}}</td>
-                        <td>{{campaign.owner}}</td>
-                        <td>{{campaign.creationTime}}</td>
-                        <td align="center">{{campaign.enabled == true ? 'Yes' : 'No'}}</td>
-                        <td>{{campaign.startTime}}</td>
-                        <td>{{campaign.endTime}}</td>
-                        <td>
-                            <table border="0px" >
-                                <tr *ngFor="let selector of campaign.selectors">
-                                    <!--<td>{{selector.id}}</td>-->
-                                    <!--<td>{{selector.name}}</td>-->
-                                    <!--<td>{{selector.description}}</td>-->
-                                    <!--<td>{{selector.priority}}</td>-->
-                                    <!--<td>{{selector.maxViews}}</td>-->
-                                    <!--<td>{{selector.coolDownPeriod}}</td>-->
-                                    <!--<td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>-->
-                                    <nav>
-                                        <a [routerLink]="['/selector', selector.id ]" routerLinkActive="active"><td>{{selector.name}}</td></a>
-                                    </nav>
-                                    <router-outlet>
-                                    </router-outlet>
-                                    <!--<td>{{selector.name}}</td>-->
-                                    <!--<td>{{selector.startTime}}</td>-->
-                                    <!--<td>{{selector.endTime}}</td>-->
-                                    <!--<td>{{selector.rule}}</td>-->
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            <table border="0px">
-                                <tr *ngFor="let asset of campaign.assets">
-                                    <nav>
-                                        <a [routerLink]="['/asset', asset.id ]" routerLinkActive="active"><td>{{asset.name}}</td></a>
-                                    </nav>
-                                    <router-outlet>
-                                    </router-outlet>
-                                    <!--<td>{{asset.filename}}</td>-->
-                                    <!--<td>{{asset.duration}}</td>-->
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-                <h5>{{errorMessage}}</h5>`
+  moduleId: module.id,
+  templateUrl: 'campaign-list.component.html'
   //  template: `<h2>Campaign Overview</h2>
   //                   <ngx-datatable
   //                      class="material"
