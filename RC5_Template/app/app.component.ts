@@ -16,7 +16,7 @@ import { AssetComponent} from './asset/asset.component';
               <ul class='horizontal'>
                   <li><a [routerLink]="['/welcome']">Home</a></li>
                   <li><a [routerLink]="['/campaigns']">Campaign Overview</a></li>
-                  <li><a [routerLink]="['/impressions']">Impressions</a></li>
+                  <li><a [routerLink]="['/impressions']">Impression Overview</a></li>
               </ul>
             </div>
         </nav>
