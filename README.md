@@ -23,3 +23,9 @@ Using the
 * https://www.typescriptlang.org/docs/home.html
 * import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 * logging : https://www.npmjs.com/package/angular2-log
+
+* https://www.ag-grid.com/best-angular-2-data-grid/#gsc.tab=0
+* Voorbeeld: C:\wim\telenet\java-projecten\angular\ag-grid-angular-seed\angular-cli & npm start
+-> opstarten gebeurt anders:
+** zie ng serve
+** zie webpack: Compiled successfully.
