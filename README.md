@@ -29,3 +29,5 @@ Using the
 -> opstarten gebeurt anders:
 ** zie ng serve
 ** zie webpack: Compiled successfully.
+
+* https://www.genuitec.com/products/angular-ide/
