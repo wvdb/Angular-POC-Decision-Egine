@@ -2,7 +2,7 @@
 <table border="2px">
     <thead>
     <tr>
-        <th>Id</th>
+        <th>Campaign Id</th>
         <th>Name</th>
         <th>Description</th>
         <th>Owner</th>
@@ -26,22 +26,11 @@
         <td>
             <table border="0px" >
                 <tr *ngFor="let selector of campaign.selectors">
-                    <!--<td>{{selector.id}}</td>-->
-                    <!--<td>{{selector.name}}</td>-->
-                    <!--<td>{{selector.description}}</td>-->
-                    <!--<td>{{selector.priority}}</td>-->
-                    <!--<td>{{selector.maxViews}}</td>-->
-                    <!--<td>{{selector.coolDownPeriod}}</td>-->
-                    <!--<td>{{selector.enabled == true ? 'Yes' : 'No'}}</td>-->
                     <nav>
-                        <a title="Details of Selector" [routerLink]="['/selector', selector.id ]" routerLinkActive="active"><td>{{selector.name}}</td></a>
+                        <a title="Details of Selector" [routerLink]="['/selector', selector.id, campaign.name]" routerLinkActive="active"><td>{{selector.name}}</td></a>
                     </nav>
                     <router-outlet>
                     </router-outlet>
-                    <!--<td>{{selector.name}}</td>-->
-                    <!--<td>{{selector.startTime}}</td>-->
-                    <!--<td>{{selector.endTime}}</td>-->
-                    <!--<td>{{selector.rule}}</td>-->
                 </tr>
             </table>
         </td>
@@ -49,12 +38,10 @@
             <table border="0px">
                 <tr *ngFor="let asset of campaign.assets">
                     <nav>
-                        <a title="Details of Asset" [routerLink]="['/asset', asset.id ]" routerLinkActive="active"><td>{{asset.name}}</td></a>
+                        <a title="Details of Asset" [routerLink]="['/asset', asset.id, campaign.name]" routerLinkActive="active"><td>{{asset.name}}</td></a>
                     </nav>
                     <router-outlet>
                     </router-outlet>
-                    <!--<td>{{asset.filename}}</td>-->
-                    <!--<td>{{asset.duration}}</td>-->
                 </tr>
             </table>
         </td>

@@ -16,7 +16,7 @@ export class SelectorService {
     constructor(private _http: Http, @Inject(APP_CONFIG) private _config: IAppConfig) {}
 
     getSelector(selectorId:string) {
-        console.log( '>>>Starting retrieve selector with id '.concat(selectorId));
+        console.log('>>>Starting retrieve selector with id '.concat(selectorId));
         return this._http.get(this._url.concat(selectorId))
         //return this._http.get(this._config.selectorEndpoint.concat(selectorId))
             .map((response:Response) => response.json())

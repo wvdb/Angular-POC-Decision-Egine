@@ -9,7 +9,10 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-    campaignEndpoint: "http://localhost:8084/campaigns",
-    selectorEndpoint: "http://localhost:8084/selectors/",
-    assetEndpoint: "http://localhost:8084/assets/"
+    // campaignEndpoint: "http://localhost:8084/campaigns",
+    // selectorEndpoint: "http://localhost:8084/selectors/",
+    // assetEndpoint: "http://localhost:8084/assets/"
+    campaignEndpoint: "http://localhost:8080/campaigns",
+    selectorEndpoint: "http://localhost:8080/selectors/",
+    assetEndpoint: "http://localhost:8080/assets/"
 };

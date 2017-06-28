@@ -20,6 +20,10 @@ nav a.active {
     color: #0000ee;
 }
 
+nav a.active_white {
+    color: white;
+}
+
 ul.horizontal {
     list-style-type: none;
     margin: 0 0 10px 0;

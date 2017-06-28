@@ -1,7 +1,10 @@
-<!--<h2>Asset</h2>-->
 <table border="2px">
+  <tr style="background-color: blue; font-size: large; color: white">
+      <td>Campaign</td>
+      <a style="color: white" [routerLink]="['/campaigns']"><td>{{campaignName}}</td></a>
+  </tr>
     <tr>
-        <td>Id</td>
+        <td>Asset Id</td>
         <td>{{asset.id}}</td>
     </tr>
     <tr>
@@ -25,7 +28,7 @@
         <td>{{asset.index}}</td>
     </tr>
     <tr>
-        <td>TrackingCode</td>
+        <td>Tracking Code</td>
         <td>{{asset.trackingCode}}</td>
     </tr>
 </table>

@@ -24,8 +24,8 @@ import { APP_CONFIG, AppConfig } from './app.config';
                 {path: 'welcome', component: WelcomeComponent},
                 {path: 'campaigns', component: CampaignListComponent},
                 {path: 'impressions', component: ImpressionListComponent},
-                {path: 'selector/:id', component: SelectorComponent},
-                {path: 'asset/:id', component: AssetComponent}
+                {path: 'selector/:id/:campaignName', component: SelectorComponent},
+                {path: 'asset/:id/:campaignName', component: AssetComponent}
           ]
       )
   ],

@@ -1,7 +1,12 @@
 <!--<h2>Selector</h2>-->
+
 <table border="2px">
+    <tr style="background-color: blue; font-size: large; color: white">
+        <td>Campaign</td>
+        <a style="color: white" [routerLink]="['/campaigns']"><td>{{campaignName}}</td></a>
+    </tr>
     <tr>
-        <td>Id</td>
+        <td>Selector Id</td>
         <td>{{selector.id}}</td>
     </tr>
     <tr>

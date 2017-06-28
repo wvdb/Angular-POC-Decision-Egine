@@ -14,14 +14,15 @@ export class AssetComponent implements OnInit{
     abstract;
     errorMessage: string;
     asset: any = {};
+    campaignName: string;
 
     constructor(
         private assetService: AssetService,
         private route: ActivatedRoute) {
-
     }
 
     ngOnInit(){
+        this.campaignName = this.route.snapshot.params['campaignName'];
         this.assetService.getAsset(this.route.snapshot.params['id'])
             .subscribe(responseSelector => {
                 this.asset = responseSelector,
@@ -30,5 +31,3 @@ export class AssetComponent implements OnInit{
     }
 
 }
-
-
