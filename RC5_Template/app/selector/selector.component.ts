@@ -20,7 +20,6 @@ export class SelectorComponent implements OnInit{
     }
 
     ngOnInit(){
-        // debugger;
         this.campaignName = this.route.snapshot.params['campaignName'];
         console.log('+++Route parameter campaignName = '.concat(this.campaignName));
         this.selectorService.getSelector(this.route.snapshot.params['id'])

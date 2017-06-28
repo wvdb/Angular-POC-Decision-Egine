@@ -16,7 +16,8 @@
     </thead>
     <tr *ngFor="let campaign of rows">
         <td align="center">{{campaign.id}}</td>
-        <td>{{campaign.name}}</td>
+        <td><a [routerLink]="['/campaign', campaign.name]" routerLinkActive="active">{{campaign.name}}</a></td>
+        <!-- <td>{{campaign.name}}</td> -->
         <td>{{campaign.description}}</td>
         <td>{{campaign.owner}}</td>
         <td>{{campaign.creationTime | date:"dd/MM/yyyy HH:mm"}} </td>
