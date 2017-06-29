@@ -2,7 +2,7 @@
 <table border="2px">
     <thead>
     <tr>
-        <th>Campaign Id</th>
+        <th>Campaign<br>Id</th>
         <th>Name</th>
         <th>Description</th>
         <th>Owner</th>
@@ -17,7 +17,6 @@
     <tr *ngFor="let campaign of rows">
         <td align="center">{{campaign.id}}</td>
         <td><a [routerLink]="['/campaign', campaign.name]" routerLinkActive="active">{{campaign.name}}</a></td>
-        <!-- <td>{{campaign.name}}</td> -->
         <td>{{campaign.description}}</td>
         <td>{{campaign.owner}}</td>
         <td>{{campaign.creationTime | date:"dd/MM/yyyy HH:mm"}} </td>
@@ -45,6 +44,9 @@
                     </router-outlet>
                 </tr>
             </table>
+        </td>
+        <td>
+            <a title="Remove campaign" [routerLink]="['/campaignRemove', campaign.id]" routerLinkActive="active"><img src="app/app-images/remove.png" width="10" height="10"></a>
         </td>
     </tr>
 </table>

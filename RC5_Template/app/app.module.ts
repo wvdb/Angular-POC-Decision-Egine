@@ -8,6 +8,7 @@ import { AppComponent }             from './app.component';
 import { WelcomeComponent }         from './welcome.component';
 import { CampaignListComponent }    from './campaign/campaign-list.component';
 import { CampaignDryRunComponent }  from './campaign-dry-run/campaign-dry-run.component';
+import { CampaignRemoveComponent }  from './campaign-remove/campaign-remove.component';
 import { ImpressionListComponent}   from './impression/impression-list.component';
 import { SelectorComponent }        from './selector/selector.component';
 import { AssetComponent }           from './asset/asset.component';
@@ -24,6 +25,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
       RouterModule.forRoot([
                 {path: 'welcome', component: WelcomeComponent},
                 {path: 'campaigns', component: CampaignListComponent},
+                {path: 'campaignRemove/:campaignId', component: CampaignRemoveComponent},
                 {path: 'campaign/:campaignName', component: CampaignDryRunComponent},
                 {path: 'impressions', component: ImpressionListComponent},
                 {path: 'selector/:id/:campaignName', component: SelectorComponent},
@@ -31,7 +33,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
           ]
       )
   ],
-  declarations: [ AppComponent, WelcomeComponent, SelectorComponent, CampaignDryRunComponent, CampaignListComponent, ImpressionListComponent, AssetComponent],
+  declarations: [ AppComponent, WelcomeComponent, SelectorComponent, CampaignDryRunComponent, CampaignRemoveComponent, CampaignListComponent, ImpressionListComponent, AssetComponent],
   bootstrap:    [ AppComponent ],
   providers: [
         { provide: APP_CONFIG, useValue: AppConfig }

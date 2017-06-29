@@ -24,7 +24,6 @@ import { CampaignService} from './campaign.service';
 })
 
 export class CampaignListComponent implements OnInit{
-    abstract;
     rows: any[];
     errorMessage: string;
 
