@@ -7,6 +7,7 @@ export interface IAppConfig {
     selectorEndpoint: string;
     campaignEndpoint: string;
     assetEndpoint: string;
+    impressionReportEndpoint: string;
 }
 
 export const AppConfig: IAppConfig = {
@@ -16,5 +17,6 @@ export const AppConfig: IAppConfig = {
     campaignDryRunEndpoint: "http://localhost:8084/ads/dryRunPlacement?campaignName=",
     campaignEndpoint: "http://localhost:8080/campaigns",
     selectorEndpoint: "http://localhost:8080/selectors/",
-    assetEndpoint: "http://localhost:8080/assets/"
+    assetEndpoint: "http://localhost:8080/assets/",
+    impressionReportEndpoint: "http://localhost:8081/impressions/customer/92739979"
 };

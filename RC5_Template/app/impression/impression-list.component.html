@@ -1,4 +1,4 @@
-<h1>Tabel testje</h1>
+<!-- <h1>Tabel testje</h1> -->
 <!--<ag-grid-angular style="width: 500px; height: 115px;"-->
                  <!--class="ag-fresh"-->
                  <!--[rowData]="rowData"-->
@@ -6,3 +6,24 @@
                  <!--[gridOptions]="gridOptions"-->
                  <!--(gridReady)="onGridReady($event)">-->
 <!--</ag-grid-angular>-->
+
+<table border="2px">
+  <thead>
+  <tr>
+    <th>Impression<br>Id</th>
+    <th>Customer<br>Id</th>
+    <th>Ad Id</th>
+    <th>Impression Time</th>
+    <th>Position</th>
+  </tr>
+</thead>
+
+<tr *ngFor="let impression of rows">
+        <td align="center">{{impression.id}}</td>
+        <td align="center">{{impression.customerId}}</td>
+        <td align="center">{{impression.adId}}</td>
+        <td>{{impression.impressionTime | date:"dd/MM/yyyy HH:mm"}}</td>
+        <td>{{impression.position}}</td>
+</tr>
+
+</table>

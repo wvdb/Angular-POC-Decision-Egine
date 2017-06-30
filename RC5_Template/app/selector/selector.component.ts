@@ -9,7 +9,6 @@ import { SelectorService } from './selector.service';
 })
 
 export class SelectorComponent implements OnInit{
-    abstract;
     errorMessage: string;
     campaignName: string;
     selector: any = {};

@@ -1,38 +1,23 @@
 import { Component, OnInit }    from '@angular/core';
-import { GridOptions }          from "ag-grid/main";
+import { ActivatedRoute } from '@angular/router';
+import { ImpressionService } from './impression.service';
 
 @Component({
   selector: 'impression-list',
   moduleId: module.id,
-  templateUrl: 'impression-list.component.html'
+  templateUrl: 'impression-list.component.html',
+  providers:[ImpressionService]
 })
 
 export class ImpressionListComponent {
-    gridOptions: GridOptions;
-    columnDefs: any[];
-    rowData: any[];
+  rows: any[];
+  errorMessage: string;
 
-    constructor() {
-        this.gridOptions = <GridOptions>{};
+  constructor(private _impressionService : ImpressionService) {}
 
-        this.columnDefs = [
-            {headerName: "Make", field: "make"},
-            {headerName: "Model", field: "model"},
-            {headerName: "Price", field: "price"}
-        ];
-
-        this.rowData = [
-            {make: "Toyota", model: "Celica", price: 35000},
-            {make: "Ford", model: "Mondeo", price: 32000},
-            {make: "Porsche", model: "Boxter", price: 72000}
-        ]
-    }
-
-    onGridReady(params) {
-        params.api.sizeColumnsToFit();
-    }
-
-    selectAllRows() {
-        this.gridOptions.api.selectAll();
-    }
+  ngOnInit(){
+          this._impressionService.getImpressions()
+                  .subscribe(responseImpressions => this.rows = responseImpressions,
+                             responseError => this.errorMessage = 'Retrieving impressions failed. ' || responseError);
+  }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CampaignService} from './campaign/campaign.service';
 import { CampaignListComponent} from './campaign/campaign-list.component';
 import { ImpressionListComponent} from './impression/impression-list.component';
+import { ImpressionService} from './impression/impression.service';
 import { SelectorService} from './selector/selector.service';
 import { SelectorComponent} from './selector/selector.component';
 import { AssetService} from './asset/asset.service';
