@@ -1,0 +1,17 @@
+management service
+------------------- 
+
+cd C:/wim/telenet/java-projecten/angular-template/Angular-2-Tutorials/RC5_Template/app
+
+npm start 
+of 
+ng serve --open 
+
+npm install -> volledige installatie van NodeJS
+
+atom shortcuts
+--------------
+
+CTRL SHFT / -> comment 
+CTRL SHFT P -> overview ATOM cmds 
+
