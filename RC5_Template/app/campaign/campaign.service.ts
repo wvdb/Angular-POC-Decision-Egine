@@ -16,7 +16,14 @@ export class CampaignService {
     getCampaigns() {
         return this._http.get(this._config.campaignEndpoint)
             .map((response:Response) => response.json())
-            //.do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
+            .do(data => console.log('Campaigns retrieved: '+ JSON.stringify(data)))
+            .catch(CampaignService._handleError);
+    }
+
+    executeCampaignRemove(campaignId:string) {
+        console.log('Remove Campaign : campaignId = ' + campaignId);
+        return this._http.delete(this._config.campaignEndpoint.concat("/").concat(campaignId))
+            .map((response:Response) => response)
             .catch(CampaignService._handleError);
     }
 

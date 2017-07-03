@@ -35,4 +35,4 @@ Using the
 ### Websites of interest (docker)
 
 https://scotch.io/tutorials/create-a-mean-app-with-angular-2-and-docker-compose
-
+https://www.w3schools.com/jsref/default.asp -> javascript

@@ -25,7 +25,7 @@ import { APP_CONFIG, AppConfig } from './app.config';
       RouterModule.forRoot([
                 {path: 'welcome', component: WelcomeComponent},
                 {path: 'campaigns', component: CampaignListComponent},
-                {path: 'campaignRemove/:campaignId', component: CampaignRemoveComponent},
+                // {path: 'campaignRemove/:campaignId', component: CampaignListComponent},
                 {path: 'campaign/:campaignName', component: CampaignDryRunComponent},
                 {path: 'impressions', component: ImpressionListComponent},
                 {path: 'selector/:id/:campaignName', component: SelectorComponent},

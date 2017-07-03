@@ -1,4 +1,5 @@
-<!--<h2>Campaign Overview</h2>-->
+<h5>{{errorMessage}}</h5>
+
 <table border="2px">
     <thead>
     <tr>
@@ -46,8 +47,8 @@
             </table>
         </td>
         <td>
-            <a title="Remove campaign" [routerLink]="['/campaignRemove', campaign.id]" routerLinkActive="active"><img src="app/app-images/remove.png" width="10" height="10"></a>
+            <!--<a title="Remove campaign" [routerLink]="['/campaignRemove', campaign.id]" routerLinkActive="active"><img src="app/app-images/remove.png" width="10" height="10"></a>-->
+            <button (click)="removeCampaign(campaign.id)"><img title="Remove campaign..." src="app/app-images/remove.png" width="10" height="10"></button>
         </td>
     </tr>
 </table>
-<h5>{{errorMessage}}</h5>
