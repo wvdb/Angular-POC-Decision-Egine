@@ -8,6 +8,22 @@
 
 <h5>{{errorMessage}}</h5>
 
+<b><label for="customerId">Customer Id: </label><input value="92739979" required=true minlength="1" maxlength="15" #box (keyup.enter)="onEnter(box.value)"></b><br><br>
+<!-- <b><label for="customerId">Customer Id: </label><input value="92739979" required=true minlength="1" maxlength="15" name="customerId" [(ngModel)]="name" #name="ngModel" #box (keyup.enter)="onEnter(box.value)"></b><br><br> -->
+
+<!-- <div *ngIf="name.errors && (name.dirty || name.touched)"
+     class="alert alert-danger">
+    <div [hidden]="!name.errors.required">
+      Customer id is required
+    </div>
+    <div [hidden]="!name.errors.minlength">
+      Customer id must be at least 1 character long.
+    </div>
+    <div [hidden]="!name.errors.maxlength">
+      Customer id cannot be more than 15 characters long.
+    </div>
+</div> -->
+
 <table border="2px">
   <thead>
   <tr>

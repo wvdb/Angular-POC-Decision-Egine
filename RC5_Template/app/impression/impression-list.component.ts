@@ -11,13 +11,31 @@ import { ImpressionService } from './impression.service';
 
 export class ImpressionListComponent {
   rows: any[];
+  customerId: string = '';
   errorMessage: string;
 
   constructor(private _impressionService : ImpressionService) {}
 
-  ngOnInit(){
-          this._impressionService.getImpressions()
-                  .subscribe(responseImpressions => this.rows = responseImpressions,
-                             responseError => this.errorMessage = 'Retrieving impressions failed. ' || responseError);
+  // ngOnInit(){
+  //         if (this.customerId != '') {
+  //           console.log('ngOnInit -> customer with id: ' + this.customerId);
+  //
+  //           this._impressionService.getImpressions(this.customerId)
+  //                   .subscribe(responseImpressions => this.rows = responseImpressions,
+  //                              responseError => this.errorMessage = 'Retrieving impressions failed. ' || responseError);
+  //         }
+  // }
+
+  onEnter(value: string) {
+    console.log('onEnter: value of customerId = ' + value);
+    this.customerId = value;
+
+    if (this.customerId != '') {
+      console.log('onEnter -> customer with id: ' + this.customerId);
+
+      this._impressionService.getImpressions(this.customerId)
+              .subscribe(responseImpressions => this.rows = responseImpressions,
+                         responseError => this.errorMessage = 'Retrieving impressions failed. ' || responseError);
+    }
   }
 }

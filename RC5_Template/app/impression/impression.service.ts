@@ -13,8 +13,9 @@ import { APP_CONFIG, IAppConfig } from '../app.config';
 export class ImpressionService {
     constructor(private _http: Http, @Inject(APP_CONFIG) private _config: IAppConfig) {}
 
-    getImpressions() {
-        return this._http.get(this._config.impressionReportEndpoint)
+    getImpressions(customerId:string) {
+        console.log('Retrieving impressions for customer with id: ' + customerId);
+        return this._http.get(this._config.impressionReportEndpoint + customerId)
             .map((response:Response) => response.json())
             .do(data => console.log('Impressions retrieved: '+ JSON.stringify(data)))
             .catch(ImpressionService._handleError);

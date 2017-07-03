@@ -10,13 +10,13 @@ export interface IAppConfig {
     impressionReportEndpoint: string;
 }
 
-export const AppConfig: IAppConfig = {
+export const AppConfig = {
     // campaignEndpoint: "http://localhost:8084/campaigns",
     // selectorEndpoint: "http://localhost:8084/selectors/",
     // assetEndpoint: "http://localhost:8084/assets/"
     campaignDryRunEndpoint: "http://localhost:8084/ads/dryRunPlacement?campaignName=",
     campaignEndpoint: "http://localhost:8080/campaigns",
-    selectorEndpoint: "http://localhost:8080/selectors/",
+    selectorEndpoint:  "http://localhost:8080/selectors/",
     assetEndpoint: "http://localhost:8080/assets/",
-    impressionReportEndpoint: "http://localhost:8081/impressions/customer/92739979"
+    impressionReportEndpoint: "http://localhost:8081/impressions/customer/"
 };
