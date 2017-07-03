@@ -13,6 +13,7 @@ export class ImpressionListComponent {
   rows: any[];
   customerId: string = '';
   errorMessage: string;
+  submitted: boolean = false;
 
   constructor(private _impressionService : ImpressionService) {}
 
@@ -29,6 +30,8 @@ export class ImpressionListComponent {
   onEnter(value: string) {
     console.log('onEnter: value of customerId = ' + value);
     this.customerId = value;
+
+    this.submitted = true;
 
     if (this.customerId != '') {
       console.log('onEnter -> customer with id: ' + this.customerId);

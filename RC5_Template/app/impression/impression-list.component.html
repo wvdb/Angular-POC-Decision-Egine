@@ -6,41 +6,47 @@
                  <!--(gridReady)="onGridReady($event)">-->
 <!--</ag-grid-angular>-->
 
-<h5>{{errorMessage}}</h5>
+<!-- <form #heroForm="ngForm" *ngIf="active" (ngSubmit)="onSubmit()"> -->
 
-<b><label for="customerId">Customer Id: </label><input value="92739979" required=true minlength="1" maxlength="15" #box (keyup.enter)="onEnter(box.value)"></b><br><br>
-<!-- <b><label for="customerId">Customer Id: </label><input value="92739979" required=true minlength="1" maxlength="15" name="customerId" [(ngModel)]="name" #name="ngModel" #box (keyup.enter)="onEnter(box.value)"></b><br><br> -->
+    <h5>{{errorMessage}}</h5>
 
-<!-- <div *ngIf="name.errors && (name.dirty || name.touched)"
-     class="alert alert-danger">
-    <div [hidden]="!name.errors.required">
-      Customer id is required
-    </div>
-    <div [hidden]="!name.errors.minlength">
-      Customer id must be at least 1 character long.
-    </div>
-    <div [hidden]="!name.errors.maxlength">
-      Customer id cannot be more than 15 characters long.
-    </div>
-</div> -->
+    <b><label for="customerId">Customer Id: </label><input value="92739979" required=true minlength="1" maxlength="15" #box (keyup.enter)="onEnter(box.value)"></b><br><br>
 
-<table border="2px">
-  <thead>
-  <tr>
-    <th>Impression<br>Id</th>
-    <th>Customer<br>Id</th>
-    <th>Ad Id</th>
-    <th>Impression Time</th>
-    <th>Position</th>
-  </tr>
-</thead>
+    <!-- <b><label for="customerId">Customer Id: </label> -->
+    <!-- <input value="92739979" required=true minlength="1" maxlength="15" id="customerId" name="customerId" [(ngModel)]="model.customerId" #name="ngModel"></b><br><br> -->
 
-<tr *ngFor="let impression of rows">
-        <td align="center">{{impression.id}}</td>
-        <td align="center">{{impression.customerId}}</td>
-        <td align="center">{{impression.adId}}</td>
-        <td>{{impression.impressionTime | date:"dd/MM/yyyy HH:mm:ss"}}</td>
-        <td>{{impression.position}}</td>
-</tr>
+    <!-- <div *ngIf="name.errors && (name.dirty || name.touched)"
+         class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+          Customer id is required
+        </div>
+        <div [hidden]="!name.errors.minlength">
+          Customer id must be at least 1 character long.
+        </div>
+        <div [hidden]="!name.errors.maxlength">
+          Customer id cannot be more than 15 characters long.
+        </div>
+    </div> -->
 
-</table>
+    <table border="2px">
+      <thead>
+      <tr>
+        <th>Impression<br>Id</th>
+        <th>Customer<br>Id</th>
+        <th>Ad Id</th>
+        <th>Impression Time</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let impression of rows">
+            <td align="center">{{impression.id}}</td>
+            <td align="center">{{impression.customerId}}</td>
+            <td align="center">{{impression.adId}}</td>
+            <td>{{impression.impressionTime | date:"dd/MM/yyyy HH:mm:ss"}}</td>
+            <td>{{impression.position}}</td>
+    </tr>
+
+    </table>
+
+<!-- </form> -->

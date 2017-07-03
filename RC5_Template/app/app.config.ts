@@ -8,6 +8,7 @@ export interface IAppConfig {
     campaignEndpoint: string;
     assetEndpoint: string;
     impressionReportEndpoint: string;
+    customerEndpoint: string;
 }
 
 export const AppConfig = {
@@ -19,4 +20,5 @@ export const AppConfig = {
     selectorEndpoint:  "http://localhost:8080/selectors/",
     assetEndpoint: "http://localhost:8080/assets/",
     impressionReportEndpoint: "http://localhost:8081/impressions/customer/"
+  , customerEndpoint: "http://localhost:8082/dna/customers"
 };

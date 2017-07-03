@@ -7,6 +7,8 @@ import { SelectorService} from './selector/selector.service';
 import { SelectorComponent} from './selector/selector.component';
 import { AssetService} from './asset/asset.service';
 import { AssetComponent} from './asset/asset.component';
+import { CustomerService} from './customer/customer.service';
+import { CustomerListComponent} from './customer/customer-list.component';
 
 @Component({
     selector: 'my-app',
@@ -18,6 +20,7 @@ import { AssetComponent} from './asset/asset.component';
                   <li><a [routerLink]="['/welcome']">Home</a></li>
                   <li><a [routerLink]="['/campaigns']">Campaign Overview</a></li>
                   <li><a [routerLink]="['/impressions']">Impression Overview</a></li>
+                  <li><a [routerLink]="['/customers']">Customer Overview</a></li>
               </ul>
             </div>
         </nav>
@@ -26,8 +29,8 @@ import { AssetComponent} from './asset/asset.component';
         </div>
     </div>
     `,
-    directives: [CampaignListComponent, SelectorComponent, AssetComponent, ImpressionListComponent],
-    providers: [CampaignService, SelectorService, AssetService]
+    directives: [CampaignListComponent, SelectorComponent, AssetComponent, ImpressionListComponent, CustomerListComponent],
+    providers: [CampaignService, SelectorService, AssetService, CustomerService]
 })
 
 export class AppComponent { }

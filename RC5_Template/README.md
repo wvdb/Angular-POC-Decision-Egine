@@ -36,3 +36,5 @@ Using the
 
 https://scotch.io/tutorials/create-a-mean-app-with-angular-2-and-docker-compose
 https://www.w3schools.com/jsref/default.asp -> javascript
+https://www.typescriptlang.org/play/ -> typescript online
+https://jsfiddle.net -> javascript and typescript online
