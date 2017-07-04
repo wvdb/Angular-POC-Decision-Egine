@@ -1,0 +1,18 @@
+    <h5>{{errorMessage}}</h5>
+
+    <table border="2px">
+      <thead>
+      <tr>
+        <th>Customer<br>Id</th>
+        <th>Owner<br>Id</th>
+        <th>STB Id</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let customer of rows">
+            <td align="center">{{customer.household}}</td>
+            <td align="center">{{customer.owner}}</td>
+            <td align="center">{{customer.id}}</td>
+    </tr>
+
+    </table>
